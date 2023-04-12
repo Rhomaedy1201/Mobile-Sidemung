@@ -1,8 +1,10 @@
-package com.rippleInv.sidemung;
+package com.rippleInv.sidemung.views.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.rippleInv.sidemung.R;
 
 public class MainActivity extends AppCompatActivity {
 
