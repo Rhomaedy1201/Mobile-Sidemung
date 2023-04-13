@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.splash.splashScreen">
+
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="300dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/logodemung"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:src="@drawable/logodemung" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">sidemung</string>
+
+<!--    Customize-->
+    <string name="titleWelcome">Selamat Datang Di Pengaduan\nDesa Demung</string>
 </resources>
