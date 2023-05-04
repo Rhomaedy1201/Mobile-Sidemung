@@ -21,7 +21,7 @@
             android:name=".views.auth.StartPage"
             android:exported="false" />
         <activity
-            android:name=".views.home.MainActivity"
+            android:name=".views.main.MainActivity"
             android:exported="false" />
         <activity
             android:name=".views.splash.splashScreen"

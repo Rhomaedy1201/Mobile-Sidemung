@@ -14,9 +14,9 @@ public class StartPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_page);
-        init();
+        action();
     }
-    private void init(){
+    private void action(){
         btnToLogin = findViewById(R.id.btnToLogin);
         btnToRegister = findViewById(R.id.btnToRegister);
 

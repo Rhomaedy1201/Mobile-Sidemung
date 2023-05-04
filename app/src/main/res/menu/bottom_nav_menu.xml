@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Beranda"
+        android:icon="@drawable/home_ic"
+        android:id="@+id/beranda"/>
+    <item android:title="Rekapan"
+        android:icon="@drawable/recap_ic"
+        android:id="@+id/rekapan"/>
+    <item android:title="Notifikasi"
+        android:icon="@drawable/notif_ic"
+        android:id="@+id/notif"/>
+    <item android:title="Profil"
+        android:icon="@drawable/person_ic"
+        android:id="@+id/profil"/>
+</menu>
