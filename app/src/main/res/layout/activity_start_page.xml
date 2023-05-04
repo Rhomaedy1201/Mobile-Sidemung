@@ -7,20 +7,61 @@
     tools:context=".views.auth.StartPage">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/imgwelcome"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/imgwelcome"
-        android:layout_marginTop="40dp"/>
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/titleWelcome"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/imgwelcome" />
+
+    <TextView
+        android:id="@+id/titleWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/imgwelcome"
-        android:gravity="center"
         android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:textSize="25sp"/>
+        android:gravity="center"
+        android:text="@string/titleWelcome"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subJudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleWelcome"
+        android:layout_marginTop="9dp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Sampaikan pengaduan anda kepada kami melalui aplikasi E - Complaint"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subJudul"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnToLogin"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="Masuk" />
+
+        <Button
+            android:id="@+id/btnToRegister"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="17sp"
+            android:background="@drawable/btn_secondary"
+            android:text="Belum punya Akun? Daftar dulu" />
+    </LinearLayout>
 
 </RelativeLayout>

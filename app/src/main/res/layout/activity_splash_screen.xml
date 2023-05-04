@@ -8,17 +8,19 @@
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="280dp"
+        android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:src="@drawable/logodemung" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgLogo"
+        android:layout_marginTop="-34dp"
+        android:gravity="center"
         android:text="PENGADUAN DESA\nDEMUNG"
-        android:textSize="25dp"
         android:textColor="@color/green01"
-        android:textStyle="bold"
-        android:gravity="center"/>
+        android:textSize="25dp"
+        android:textStyle="bold" />
 </RelativeLayout>

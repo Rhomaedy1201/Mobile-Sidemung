@@ -6,9 +6,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.rippleInv.sidemung.views.auth.StartPage;
-import com.rippleInv.sidemung.views.home.MainActivity;
 import com.rippleInv.sidemung.R;
-import com.rippleInv.sidemung.routing.Router;
+import com.rippleInv.sidemung.launcher.PageRouter;
 
 public class splashScreen extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 3000; // 3 seconds
@@ -20,7 +19,7 @@ public class splashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Router.start(splashScreen.this, StartPage.class);
+                PageRouter.launch(splashScreen.this, StartPage.class);
                 finish();
             }
         }, SPLASH_TIME_OUT);
