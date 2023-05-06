@@ -22,35 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     private BottomNavigationView bottomNavigationView;
     @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        binding = ActivityMainBinding.inflate(getLayoutInflater());
-////        setContentView(R.layout.activity_main);
-//        setContentView(binding.getRoot());
-//        replaceFragment(new HomeFragment());
-////        binding.bottomNavigationView = findViewById(R.id.bottomNavigationView);
-//        binding.bottomNavigationView.setOnNavigationItemSelectedListener(
-//                new BottomNavigationView.OnNavigationItemSelectedListener() {
-//                    @Override
-//                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                        switch (item.getItemId()) {
-//                            case R.id.beranda:
-//                                replaceFragment(new HomeFragment());
-//                                return true;
-//                            case R.id.rekapan:
-//                                replaceFragment(new recapFragment());
-//                                return true;
-//                            case R.id.notif:
-//                                replaceFragment(new notifFragment());
-//                                return true;
-//                            case R.id.profil:
-//                                replaceFragment(new profilFragment());
-//                                return true;
-//                        }
-//                        return false;
-//                    }
-//                });
-//    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());

@@ -10,7 +10,7 @@ import com.rippleInv.sidemung.R;
 import com.rippleInv.sidemung.launcher.PageRouter;
 
 public class splashScreen extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 3000; // 3 seconds
+    private static int SPLASH_TIME_OUT = 3500; // 3,5 seconds
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
