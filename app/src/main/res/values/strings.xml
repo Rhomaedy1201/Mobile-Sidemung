@@ -3,6 +3,9 @@
 
     <!--    Customize-->
     <string name="titleWelcome">Selamat Datang Di Pengaduan\nDesa Demung</string>
+    <string name="descSubWelcome">Sampaikan pengaduan anda kepada kami melalui aplikasi Si - Demung</string>
+    <string name="descHome">Punya Informasi penting ? \nSilahkan buat laporan anda</string>
+    <string name="lokasiku">Kecamatan Demung, Besuki</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

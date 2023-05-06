@@ -33,7 +33,7 @@
         android:layout_marginTop="9dp"
         android:gravity="center"
         android:padding="20dp"
-        android:text="Sampaikan pengaduan anda kepada kami melalui aplikasi E - Complaint"
+        android:text="@string/descSubWelcome"
         android:textSize="17sp"
         android:textStyle="bold" />
 
@@ -41,11 +41,11 @@
         android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/subJudul"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="35dp"
         android:layout_alignParentBottom="true"
         android:weightSum="2">
 
