@@ -6,15 +6,17 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".views.profile.profilFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".views.profile.EditprofileActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/action_barEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="20dp">
 
         <LinearLayout
@@ -23,42 +25,13 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/lavender_border"
             android:orientation="vertical"
-            android:padding="30dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="71dp">
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/kembali" />
-
-                <TextView
-                    android:id="@+id/txt_file_title"
-                    android:layout_width="174dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="14dp"
-                    android:text="Ubah profil"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
+            android:padding="25dp">
 
             <ImageView
                 android:id="@+id/uploadImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/person_ic" />
 

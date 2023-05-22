@@ -9,34 +9,18 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:layout_marginTop="19dp">
+        android:layout_height="71dp">
 
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:onClick="backPengaduan"
-            android:layout_marginStart="14dp"
-            android:src="@drawable/kembali" />
-
-        <TextView
-            android:id="@+id/txt_file_title"
-            android:layout_width="174dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="56dp"
-            android:text="Buat Pengaduan"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/action_barPengaduan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </RelativeLayout>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp">
+        android:layout_marginTop="50dp">
 
         <LinearLayout
             android:orientation="vertical"
@@ -79,7 +63,7 @@
                             android:layout_marginEnd="45dp"
                             android:layout_marginLeft="34dp"
                             android:textColor="@color/white"
-                            android:textSize="19dp" />
+                            android:textSize="15dp" />
 
                     </LinearLayout>
 

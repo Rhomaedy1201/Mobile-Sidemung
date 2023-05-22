@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.rippleInv.sidemung.R;
 import com.rippleInv.sidemung.launcher.PageRouter;
+import com.rippleInv.sidemung.views.Pengaduan.PengaduanActivity;
 import com.rippleInv.sidemung.views.report.report;
 
 public class HomeFragment extends Fragment {
@@ -60,7 +61,7 @@ public class HomeFragment extends Fragment {
         doReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), report.class);
+                Intent intent = new Intent(getActivity(), PengaduanActivity.class);
                 startActivity(intent);
             }
         });

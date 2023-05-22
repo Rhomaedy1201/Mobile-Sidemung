@@ -7,6 +7,12 @@
     android:fitsSystemWindows="true"
     tools:context=".views.auth.Login">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/action_barLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"

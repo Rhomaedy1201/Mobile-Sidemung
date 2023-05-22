@@ -16,23 +16,30 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".views.profile.EditprofileActivity"
+            android:parentActivityName=".views.main.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.Pengaduan.PengaduanActivity"
+            android:exported="false"
+            android:parentActivityName=".views.main.MainActivity" />
+        <activity
             android:name=".views.UbahSandi.ResetSandi"
             android:exported="false" />
         <activity
             android:name=".views.recap.recapFragment"
             android:exported="false" />
         <activity
-            android:name=".views.from_pengaduan.from_pengaduan"
-            android:exported="false" />
-        <activity
             android:name=".views.report.report"
             android:exported="false" />
         <activity
             android:name=".views.auth.Register"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".views.auth.Login" />
         <activity
             android:name=".views.auth.Login"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".views.auth.StartPage" />
         <activity
             android:name=".views.auth.StartPage"
             android:exported="false" />

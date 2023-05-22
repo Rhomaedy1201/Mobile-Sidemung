@@ -1,7 +1,9 @@
 package com.rippleInv.sidemung.views.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +31,7 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
 
     private String TAG = "ActivityRegister";
-    private TextInputEditText email, phone, nik, password, passwordConfirm;
+    private TextInputEditText email, name, phone, nik, password, passwordConfirm;
     private Button login;
     private ProgressBar loadingPB;
 
@@ -37,8 +39,13 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regist);
+        Toolbar toolbar = findViewById(R.id.action_barRegister);
+        toolbar.setTitle("Register");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         email = findViewById(R.id.tv_email);
+        name = findViewById(R.id.tv_name);
         phone = findViewById(R.id.tv_phone);
         nik = findViewById(R.id.tv_nik);
         password = findViewById(R.id.tv_password);
@@ -49,22 +56,36 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 postUser();
-//                if (password.getText().equals(passwordConfirm.getText())){
-////                    postUser();
-//                    System.out.println("masuk");
+//                if (password.getText() == null || password.getText().equals("")){
+//                    System.out.println("Masih kosong");
 //                }else{
-//                    Toast.makeText(getApplicationContext(), "Password Harus Sama", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "tidak kosong", Toast.LENGTH_SHORT).show();
 //                }
             }
         });
     }
 
     public void postUser(){
+        String inputNik = nik.getText().toString().trim();
+        String inputName = name.getText().toString().trim();
+        String inputEmail = email.getText().toString().trim();
+        String inputPhone = phone.getText().toString().trim();
+        String inputPassword = password.getText().toString().trim();
+
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, LinkApi.Register, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.e("Rest response",response);
+                nik.setText("");
+                name.setText("");
+                email.setText("");
+                phone.setText("");
+                password.setText("");
+                Toast.makeText(getApplicationContext(), "Registrasi Berhasil", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Register.this, Login.class);
+                startActivity(intent);
+                finish();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -75,11 +96,11 @@ public class Register extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String,String>();
-                params.put("nik", "565766776666");
-                params.put("name", "inputName");
-                params.put("email", "inputEmail@gmail.com");
-                params.put("phone", "085234654123");
-                params.put("password", "inputPassword");
+                params.put("nik", inputNik);
+                params.put("name", inputName);
+                params.put("email", inputEmail);
+                params.put("phone", inputPhone);
+                params.put("password", inputPassword);
                 return params;
             }
 

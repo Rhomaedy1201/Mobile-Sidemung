@@ -14,7 +14,7 @@ import com.rippleInv.sidemung.R;
 import com.rippleInv.sidemung.databinding.ActivityMainBinding;
 import com.rippleInv.sidemung.views.home.HomeFragment;
 import com.rippleInv.sidemung.views.notification.notifFragment;
-import com.rippleInv.sidemung.views.profile.profilFragment;
+import com.rippleInv.sidemung.views.profile.ProfileFragment;
 import com.rippleInv.sidemung.views.recap.recapFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                                 replaceFragment(new notifFragment());
                                 return true;
                             case R.id.profil:
-                                replaceFragment(new profilFragment());
+                                replaceFragment(new ProfileFragment());
                                 return true;
                         }
                         return false;
