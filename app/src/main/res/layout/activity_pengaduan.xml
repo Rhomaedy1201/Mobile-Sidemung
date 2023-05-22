@@ -172,18 +172,31 @@
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/DPengaduan"
+                        <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="89dp"
-                            android:background="@drawable/btn_secondary"
-                            android:hint=""
-                            android:imeOptions="actionNext"
-                            android:maxLines="1"
-                            android:textSize="16sp" />
+                            android:layout_height="135dp"
+                            android:layout_margin="5dp"
+                            android:elevation="0.1dp"
+                            app:cardCornerRadius="10dp"
+                            android:padding="10dp">
+                            <LinearLayout
+                                android:id="@+id/captureLayout"
+                                android:layout_width="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_height="100dp"
+                                android:background="@drawable/border_image_pengaduan">
+                                <ImageView
+                                    android:id="@+id/gambarPengaduan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:src="@drawable/select_image"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
 
                         <Button
-                            android:id="@+id/btnLogin"
+                            android:id="@+id/btnPengaduan"
                             android:layout_width="match_parent"
                             android:layout_height="55dp"
                             android:layout_marginTop="34dp"
