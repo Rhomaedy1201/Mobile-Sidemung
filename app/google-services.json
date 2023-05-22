@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "755913908831",
+    "firebase_url": "https://sidemunggg-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sidemunggg",
+    "storage_bucket": "sidemunggg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755913908831:android:1b449419a928e6236931ea",
+        "android_client_info": {
+          "package_name": "com.rippleInv.sidemung"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755913908831-ga5g87qmqjp5hinok76r0cqa7o57c96n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBq1KV8YWyJ8bH7lcCrhgznwXS6tytiVwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755913908831-ga5g87qmqjp5hinok76r0cqa7o57c96n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

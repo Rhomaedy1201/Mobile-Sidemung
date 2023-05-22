@@ -1,11 +1,20 @@
 <resources>
     <string name="app_name">sidemung</string>
+    <string name="app_nama">ubaidillah ali masyhur</string>
+    <string name="app_nik">3512078745362819</string>
+    <string name="app_emai">ubaidillah@oke22gmail.com</string>
+    <string name="artikel">Pengaturan Akun</string>
+    <string name="artikel1">Ubah kata sandi</string>
+    <string name="artikel2">Hapus akun</string>
+    <string name="artikel3">Keluar</string>
+    <string name="akun1">Akun Anda</string>
 
     <!--    Customize-->
     <string name="titleWelcome">Selamat Datang Di Pengaduan\nDesa Demung</string>
     <string name="descSubWelcome">Sampaikan pengaduan anda kepada kami melalui aplikasi Si - Demung</string>
     <string name="descHome">Punya Informasi penting ? \nSilahkan buat laporan anda</string>
     <string name="lokasiku">Kecamatan Demung, Besuki</string>
+    <string name="titleHeader">Ubaidillah Ali M</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

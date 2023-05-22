@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".views.auth.forget_password">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="336dp"
+        android:layout_height="665dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="20dp"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:layout_width="339dp"
+            android:layout_height="635dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/lavender_border"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="71dp">
+
+
+                <ImageView
+                    android:id="@+id/uploadImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/kembali" />
+
+                <TextView
+                    android:id="@+id/txt_file_title"
+                    android:layout_width="174dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_toEndOf="@+id/uploadImage"
+                    android:layout_toRightOf="@+id/uploadImage"
+                    android:text="Ubah kata sandi"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="22sp" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/uploadName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="80dp"
+                android:gravity="start|center_vertical"
+                android:hint="Kata sandi lama"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:inputType="textPassword"
+                app:endIconMode="password_toggle"/>
+
+            <EditText
+                android:id="@+id/uploadEmail"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:gravity="start|center_vertical"
+                android:hint="Kata sandi baru"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:inputType="textPassword"
+                app:endIconMode="password_toggle"/>
+
+            <EditText
+                android:id="@+id/uploadNIK"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:gravity="start|center_vertical"
+                android:hint="Konfirmasi kata sandi baru"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:inputType="textPassword"
+                app:endIconMode="password_toggle" />
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/green01"
+                android:text="Simpan"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,9 +23,9 @@
         android:layout_height="433dp"
         android:paddingStart="30dp"
         android:paddingEnd="30dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="-1dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
             app:endIconMode="password_toggle">
 
 
-        <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_pw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,11 +63,21 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="205dp"
+            android:layout_marginTop="23dp"
+            android:text="Lupa katasandi?"
+            android:textColor="@color/brown"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
         <Button
             android:id="@+id/btnLogin"
-            android:layout_marginTop="55dp"
             android:layout_width="match_parent"
             android:layout_height="65dp"
+            android:layout_marginTop="19dp"
             android:text="Masuk" />
 
     </LinearLayout>

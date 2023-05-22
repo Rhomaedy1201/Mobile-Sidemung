@@ -10,5 +10,6 @@
 
 <!--    customize-->
     <color name="green01">#72B66C</color>
+    <color name="brown">#CCC7C7</color>
     <color name="red">#FF0000</color>
 </resources>

@@ -20,7 +20,7 @@
     <LinearLayout
         android:id="@+id/forms"
         android:layout_width="350dp"
-        android:layout_height="400dp"
+        android:layout_height="500dp"
         android:paddingStart="30dp"
         android:paddingEnd="30dp"
         android:layout_marginStart="1dp"
@@ -40,10 +40,10 @@
             app:startIconDrawable="@drawable/ic_baseline_email_24dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_username"
+                android:id="@+id/tv_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="" />
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="12dp"
@@ -54,6 +54,7 @@
             app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone" />
@@ -67,6 +68,7 @@
             app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_nik"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
@@ -80,6 +82,7 @@
             app:startIconDrawable="@drawable/key_ic">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
@@ -94,6 +97,7 @@
             app:startIconDrawable="@drawable/key_ic">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_password_cofirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
@@ -105,5 +109,10 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:text="Masuk" />
+        <Button
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Sudah memiliki akun? Masuk"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
