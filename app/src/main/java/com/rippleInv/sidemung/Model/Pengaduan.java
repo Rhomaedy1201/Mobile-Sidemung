@@ -1,14 +1,15 @@
 package com.rippleInv.sidemung.Model;
 
 public class Pengaduan {
-    private  String judul, status,alamat,description,id;
+    private  String judul, status,alamat,description,id,image;
 
-    public Pengaduan(String judul, String status, String alamat, String description, String id) {
+    public Pengaduan(String judul, String status, String alamat, String description, String id, String image) {
         this.judul = judul;
         this.status = status;
         this.alamat = alamat;
         this.description = description;
         this.id = id;
+        this.image = image;
     }
 
     public String getJudul() {
@@ -49,5 +50,13 @@ public class Pengaduan {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
