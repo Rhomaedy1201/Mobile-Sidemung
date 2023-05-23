@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.rippleInv.sidemung.Model.MyPreferences;
 import com.rippleInv.sidemung.R;
 import com.rippleInv.sidemung.databinding.ActivityMainBinding;
+import com.rippleInv.sidemung.views.auth.Login;
 import com.rippleInv.sidemung.views.home.HomeFragment;
 import com.rippleInv.sidemung.views.notification.notifFragment;
 import com.rippleInv.sidemung.views.profile.ProfileFragment;

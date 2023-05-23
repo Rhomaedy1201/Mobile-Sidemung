@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/brown"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/gambarBelumDiProses"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/profile_foto"/>
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp">
+                <TextView
+                    android:id="@+id/judulBelumDiProses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Kebakaran Rumah"/>
+                <TextView
+                    android:id="@+id/statusBelumDiProses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    android:text="Belum di proses"/>
+                <TextView
+                    android:id="@+id/tanggalBelumDiProses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="12-januari-2023"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/editBelumDiProses"
+                android:layout_width="35dp"
+                android:orientation="vertical"
+                android:layout_height="35dp"
+                android:background="@drawable/ic_update"/>
+            <LinearLayout
+                android:id="@+id/deleteBelumDiProses"
+                android:layout_marginLeft="5dp"
+                android:layout_width="35dp"
+                android:orientation="vertical"
+                android:layout_height="35dp"
+                android:background="@drawable/ic_delete"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

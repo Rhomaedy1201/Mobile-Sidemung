@@ -162,12 +162,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
                 android:layout_marginLeft="76dp"
                 android:layout_marginTop="300dp"
                 android:text="@string/artikel3"
-                android:layout_gravity="start|center_horizontal"
                 android:textColor="#AE000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />

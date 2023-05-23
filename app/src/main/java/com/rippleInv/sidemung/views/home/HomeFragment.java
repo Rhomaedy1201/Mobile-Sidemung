@@ -9,10 +9,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.rippleInv.sidemung.Model.MyPreferences;
 import com.rippleInv.sidemung.R;
 import com.rippleInv.sidemung.launcher.PageRouter;
 import com.rippleInv.sidemung.views.Pengaduan.PengaduanActivity;
+import com.rippleInv.sidemung.views.main.MainActivity;
 import com.rippleInv.sidemung.views.report.report;
 
 public class HomeFragment extends Fragment {
@@ -25,6 +28,8 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    TextView name;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -52,11 +57,14 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MyPreferences preferences = new MyPreferences(getActivity());
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_home, container, false);
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 //        doReport = (CardView) getView().findViewById(R.id.doReport);
         doReport = (CardView) view.findViewById(R.id.doReport);
+        name = view.findViewById(R.id.nama);
+        name.setText(preferences.getString("name",""));
         // Other view initialization or modifications if needed
         doReport.setOnClickListener(new View.OnClickListener() {
             @Override
