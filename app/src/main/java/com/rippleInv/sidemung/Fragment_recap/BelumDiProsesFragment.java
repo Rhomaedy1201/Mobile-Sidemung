@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rippleInv.sidemung.Adapters.PengaduanAdapter;
+import com.rippleInv.sidemung.Adapters.StatusBelumDiProsesAdapter;
 import com.rippleInv.sidemung.Model.ApiClient;
 import com.rippleInv.sidemung.Model.Pengaduan;
 import com.rippleInv.sidemung.R;
@@ -63,8 +64,8 @@ public class BelumDiProsesFragment extends Fragment {
                 System.out.println("blbla");
                 System.out.println(response.body());
                 pengaduan = response.body();
-                PengaduanAdapter pengaduanAdapter = new PengaduanAdapter(response.body());
-                recyclerView.setAdapter(pengaduanAdapter);
+                StatusBelumDiProsesAdapter statusBelumDiProsesAdapter = new StatusBelumDiProsesAdapter(response.body());
+                recyclerView.setAdapter(statusBelumDiProsesAdapter);
                 }
             }
 
@@ -80,11 +81,4 @@ public class BelumDiProsesFragment extends Fragment {
         }
     }
 
-    public ArrayList<Pengaduan> listPengaduan(){
-        ArrayList<Pengaduan> listPengaduan = new ArrayList<>();
-        listPengaduan.add(new Pengaduan(
-                "tes","tesstatus","yayay","deskripsi"
-        ));
-        return listPengaduan;
-    }
 }

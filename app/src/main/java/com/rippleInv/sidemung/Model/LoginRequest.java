@@ -6,6 +6,9 @@ public class LoginRequest {
     @SerializedName("password")
     private String password;
 
+    @SerializedName("email")
+    private  String email;
+
     @SerializedName("phone")
     private String phone;
 
@@ -15,6 +18,13 @@ public class LoginRequest {
     @SerializedName("nik")
     private String nik;
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getName() {
         return name;

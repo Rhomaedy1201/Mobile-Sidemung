@@ -147,11 +147,4 @@ public class SelesaiFragment extends Fragment {
         }
     }
 
-    public ArrayList<Pengaduan> listPengaduan(){
-        ArrayList<Pengaduan> listPengaduan = new ArrayList<>();
-        listPengaduan.add(new Pengaduan(
-                "tes","tesstatus","yayay","deskripsi"
-        ));
-        return listPengaduan;
-    }
 }

@@ -16,67 +16,78 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="625dp"
         android:layout_marginTop="30dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="20dp">
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/lavender_border"
-            android:orientation="vertical"
-            android:padding="25dp">
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp">
 
-            <ImageView
-                android:id="@+id/uploadImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:scaleType="fitXY"
-                android:src="@drawable/person_ic" />
-
-            <EditText
-                android:id="@+id/uploadName"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:gravity="start|center_vertical"
-                android:hint="Nama Lengkap"
-                android:padding="16dp"
-                android:inputType="text"
-                android:textColor="@color/black" />
+                android:layout_height="567dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/lavender_border"
+                android:orientation="vertical"
+                android:padding="25dp">
+
+                <ImageView
+                    android:id="@+id/uploadImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/person_ic" />
+
+                <EditText
+                    android:id="@+id/uploadName"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="start|center_vertical"
+                    android:hint="Nama Lengkap"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textColor="@color/black" />
 
 
-            <EditText
-                android:id="@+id/uploadHP"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:gravity="start|center_vertical"
-                android:hint="Nomer Handphone"
-                android:padding="16dp"
-                android:inputType="phone"
-                android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/uploadPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="start|center_vertical"
+                    android:hint="Password"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/uploadHP"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="start|center_vertical"
+                    android:hint="Nomer Handphone"
+                    android:inputType="phone"
+                    android:padding="16dp"
+                    android:textColor="@color/black" />
 
 
-            <Button
-                android:id="@+id/saveButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/green01"
-                android:text="Simpan"
-                android:textSize="18sp"/>
-        </LinearLayout>
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/green01"
+                    android:text="Simpan"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>
 
 

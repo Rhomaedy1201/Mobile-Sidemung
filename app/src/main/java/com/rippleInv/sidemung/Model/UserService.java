@@ -7,6 +7,7 @@ import okhttp3.MultipartBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -39,4 +40,13 @@ public interface UserService {
 
     @GET("api/pengaduan/{status}")
     Call<List<Pengaduan>> daftarPengaduan(@Path("status") String status);
+
+
+    @POST("api/user/update_profile")
+    Call<ResponseBody> updateProfile(@Body EditProfileRequest editProfileRequest);
+
+    @DELETE("api/pengaduan/delete/{id}")
+    Call<ResponseBody> deletePengaduan(@Path("id") String id);
+
+
 }

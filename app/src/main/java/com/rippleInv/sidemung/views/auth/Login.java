@@ -86,6 +86,7 @@ public class Login extends AppCompatActivity {
 //                    System.out.println(loginResponse.getData().getToken());
                     preferences.saveString("token",loginResponse.getData().getToken());
                     preferences.saveString("nik",loginResponse.getData().getUser().getNik());
+                    preferences.saveString("email",loginResponse.getData().getUser().getEmail());
                     preferences.saveString("name",loginResponse.getData().getUser().getName());
                     preferences.saveString("phone",loginResponse.getData().getUser().getPhone());
 //                    preferences.saveString("nama", loginRequest.getNama());

@@ -1,13 +1,14 @@
 package com.rippleInv.sidemung.Model;
 
 public class Pengaduan {
-    private  String judul, status,alamat,description;
+    private  String judul, status,alamat,description,id;
 
-    public Pengaduan(String judul, String status, String alamat, String description) {
+    public Pengaduan(String judul, String status, String alamat, String description, String id) {
         this.judul = judul;
         this.status = status;
         this.alamat = alamat;
         this.description = description;
+        this.id = id;
     }
 
     public String getJudul() {
@@ -40,5 +41,13 @@ public class Pengaduan {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

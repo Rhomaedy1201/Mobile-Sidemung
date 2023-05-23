@@ -57,6 +57,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
+            <LinearLayout
+                android:id="@+id/deleteBelumDiProses"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/ic_delete"
+                android:orientation="vertical" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

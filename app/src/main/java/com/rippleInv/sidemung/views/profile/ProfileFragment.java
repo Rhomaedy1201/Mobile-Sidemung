@@ -24,15 +24,23 @@ import retrofit2.Response;
 public class ProfileFragment extends Fragment {
 
     View view;
-    TextView toEdit_profile;
+    TextView toEdit_profile,email,nik,name;
     TextView logout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MyPreferences preferences = new MyPreferences(getContext());
         view = inflater.inflate(R.layout.fragment_profile, container, false);
         toEdit_profile = view.findViewById(R.id.toEditProfile);
         logout = view.findViewById(R.id.logout);
+        email = view.findViewById(R.id.email);
+        nik = view.findViewById(R.id.nik);
+        name = view.findViewById(R.id.name);
+
+        email.setText(preferences.getString("email",""));
+        nik.setText(preferences.getString("nik",""));
+        name.setText(preferences.getString("name",""));
         toEdit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
