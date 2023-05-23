@@ -3,6 +3,7 @@ package com.rippleInv.sidemung.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.rippleInv.sidemung.Model.Pengaduan;
 import com.rippleInv.sidemung.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +38,7 @@ public class PengaduanAdapter extends RecyclerView.Adapter<PengaduanAdapter.Peng
         Pengaduan pengaduan = listPengaduan.get(position);
         holder.judulPengaduan.setText(pengaduan.getJudul());
         holder.status.setText(pengaduan.getDescription());
+        Picasso.get().load("http://192.168.1.15:8000/data_file/"+pengaduan.getImage()).into(holder.gambar);
     }
 
     @Override
@@ -47,10 +50,13 @@ public class PengaduanAdapter extends RecyclerView.Adapter<PengaduanAdapter.Peng
     public class PengaduanViewHolder extends RecyclerView.ViewHolder {
 
         public TextView judulPengaduan,status;
+        public ImageView gambar;
         public PengaduanViewHolder(@NonNull View itemView) {
             super(itemView);
             judulPengaduan = itemView.findViewById(R.id.judulPengaduan);
             status = itemView.findViewById(R.id.statusBelumDiProses);
+            gambar = itemView.findViewById(R.id.gambarBelumDiProses);
+
         }
     }
 }
