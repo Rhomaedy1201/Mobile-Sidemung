@@ -40,7 +40,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:scaleType="fitXY"
-                    android:src="@drawable/person_ic" />
+                    android:src="@drawable/ic_profile" />
 
                 <EditText
                     android:id="@+id/uploadName"

@@ -59,6 +59,7 @@ public class SudahDiProsesFragment extends Fragment {
         listPengaduan.enqueue(new Callback<List<Pengaduan>>() {
             @Override
             public void onResponse(Call<List<Pengaduan>> call, Response<List<Pengaduan>> response) {
+                System.out.println("belum di proses"+response.body());
                 if (response.isSuccessful() && response.body() !=null){
                     System.out.println("blbla");
                     System.out.println(response.body());

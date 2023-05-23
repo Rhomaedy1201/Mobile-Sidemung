@@ -3,15 +3,19 @@ package com.rippleInv.sidemung.views.Pengaduan;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -91,6 +95,9 @@ public class PengaduanActivity extends AppCompatActivity {
         name = findViewById(R.id.inputNama);
         description = findViewById(R.id.Dcomplain);
 
+        name.setEnabled(false);
+        phone.setEnabled(false);
+
         name.setText(preferences.getString("name",""));
         phone.setText(preferences.getString("phone",""));
 
@@ -106,22 +113,6 @@ public class PengaduanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openGallery();
-//                ImagePicker.Companion.with(PengaduanActivity.this)
-//                        .crop()
-//                        .cropOval()
-//                        .maxResultSize(512,512,true)
-//                        .provider(ImageProvider.BOTH) //Or bothCameraGallery()
-//                        .createIntentFromDialog((Function1)(new Function1(){
-//                            public Object invoke(Object var1){
-//                                this.invoke((Intent)var1);
-//                                return Unit.INSTANCE;
-//                            }
-//
-//                            public final void invoke(@NotNull Intent it){
-//                                Intrinsics.checkNotNullParameter(it,"it");
-////                                launcher.launch(it);
-//                            }
-//                        }));
             }
         });
     }
@@ -136,11 +127,6 @@ public class PengaduanActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == 101 && resultCode == Activity.RESULT_OK){
-//            uri = data.getData();
-//            gambar_pengaduan.setImageURI(uri);
-//        }else{
-//            Toast.makeText(getApplicationContext(), "No Image", Toast.LENGTH_SHORT).show();
 //        }
         if (requestCode == 101 && resultCode == RESULT_OK && data != null) {
             Uri selectedImageUri = data.getData();
@@ -204,8 +190,7 @@ public class PengaduanActivity extends AppCompatActivity {
             public void onResponse(Call<PengaduanInsertResponse> call, Response<PengaduanInsertResponse> response) {
                 System.out.println(response.raw());
                 if (response.isSuccessful()){
-                    startActivity(new Intent(PengaduanActivity.this,MainActivity.class));
-                    finish();
+                    showDialog();
                 }
             }
 
@@ -214,57 +199,37 @@ public class PengaduanActivity extends AppCompatActivity {
 
             }
         });
-//        RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), imageFile);
-//        MultipartBody.Part body = MultipartBody.Part.createFormData("image", imageFile.getName(), requestFile);
         ImageRequestBody imageRequestBody = new ImageRequestBody(imageFile);
 
-
-//        File imageFile = new File("path/to/image.jpg");
 
         // Create the request body
         RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), imageFile);
         MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image", imageFile.getName(), requestFile);
 
-        // Send the request
-//        Call<ResponseBody> call = ApiClient.getUserService(PengaduanActivity.this).uploadImage(imagePart);
-//        call.enqueue(new Callback<ResponseBody>() {
-//            @Override
-//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-//                System.out.println(response.raw());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ResponseBody> call, Throwable t) {
-//
-//            }
-//        });
+    }
 
-//        Create the request body and multipart part
-//        RequestBody imageBody = RequestBody.create(MediaType.parse("image/jpeg"),imageFile);
-//        MultipartBody.Part imagePart = imageRequestBody.getMultipart();
-//        RequestBody alamatBody = RequestBody.create(MediaType.parse("text/plain"),
-//                alamat.getText().toString());
-//        RequestBody judulBody = RequestBody.create(MediaType.parse("text/plain"),
-//                judul.getText().toString());
-//        RequestBody descBody = RequestBody.create(MediaType.parse("text/plain"),
-//                description.getText().toString());
-//        RequestBody nikBody = RequestBody.create(MediaType.parse("text/plain"),
-//                preferences.getString("nik",""));
-//        Call<PengaduanInsertResponse> pengaduanInsertResponseCall = ApiClient.getUserService(PengaduanActivity.this).pengaduan(
-//                imagePart,alamatBody,descBody,judulBody,nikBody
-//        );
-//        pengaduanInsertResponseCall.enqueue(new Callback<PengaduanInsertResponse>() {
-//            @Override
-//            public void onResponse(Call<PengaduanInsertResponse> call, Response<PengaduanInsertResponse> response) {
-////                PengaduanInsertResponse pengaduanInsertResponse = response.body();
-//                    System.out.println(response.raw());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<PengaduanInsertResponse> call, Throwable t) {
-//                System.err.println(t.getMessage());
-//            }
-//        });
+    private void showDialog(){
+        ConstraintLayout constraintLayout = findViewById(R.id.successConstrantLayout);
+        View view1 = LayoutInflater.from(PengaduanActivity.this).inflate(R.layout.success_dialog, constraintLayout);
+        Button successDone = view1.findViewById(R.id.successDone);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(PengaduanActivity.this);
+        builder.setView(view1);
+        final AlertDialog alertDialog = builder.create();
+
+        successDone.findViewById(R.id.successDone).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                Toast.makeText(PengaduanActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(PengaduanActivity.this,MainActivity.class));
+                finish();
+            }
+        });
+        if (alertDialog.getWindow() != null){
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        alertDialog.show();
     }
 
 }

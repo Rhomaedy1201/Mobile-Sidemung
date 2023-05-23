@@ -126,6 +126,8 @@ public class SelesaiFragment extends Fragment {
         listPengaduan.enqueue(new Callback<List<Pengaduan>>() {
             @Override
             public void onResponse(Call<List<Pengaduan>> call, Response<List<Pengaduan>> response) {
+                System.out.println("selesai"+response.body());
+
                 if (response.isSuccessful() && response.body() !=null){
                     System.out.println("blbla");
                     System.out.println(response.body());

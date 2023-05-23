@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.rippleInv.sidemung.Fragment_recap.BelumDiProsesFragment;
 import com.rippleInv.sidemung.Model.MyPreferences;
 import com.rippleInv.sidemung.R;
 import com.rippleInv.sidemung.databinding.ActivityMainBinding;
+import com.rippleInv.sidemung.views.Pengaduan.PengaduanActivity;
 import com.rippleInv.sidemung.views.auth.Login;
 import com.rippleInv.sidemung.views.home.HomeFragment;
 import com.rippleInv.sidemung.views.notification.notifFragment;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 //    ActivityMainBinding binding;
     ActivityMainBinding binding;
     private BottomNavigationView bottomNavigationView;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
