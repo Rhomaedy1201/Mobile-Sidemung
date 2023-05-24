@@ -8,9 +8,6 @@
     <item android:title="Rekapan"
         android:icon="@drawable/recap_ic"
         android:id="@+id/rekapan"/>
-    <item android:title="Notifikasi"
-        android:icon="@drawable/notif_ic"
-        android:id="@+id/notif"/>
     <item android:title="Profil"
         android:icon="@drawable/person_ic"
         android:id="@+id/profil"/>

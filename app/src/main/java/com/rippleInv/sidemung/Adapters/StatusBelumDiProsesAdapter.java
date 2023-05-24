@@ -45,7 +45,7 @@ public class StatusBelumDiProsesAdapter extends RecyclerView.Adapter<StatusBelum
         Pengaduan pengaduan = listPengaduan.get(position);
         holder.judulPengaduan.setText(pengaduan.getJudul());
         holder.status.setText(pengaduan.getDescription());
-        Picasso.get().load("http://192.168.1.15:8000/data_file/"+pengaduan.getImage()).into(holder.gambar);
+        Picasso.get().load("http://192.168.1.6:8000/data_file/"+pengaduan.getImage()).into(holder.gambar);
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
