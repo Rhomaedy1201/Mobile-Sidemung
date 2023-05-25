@@ -1,18 +1,26 @@
 package com.rippleInv.sidemung.Adapters;
 
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.rippleInv.sidemung.Model.ApiClient;
 import com.rippleInv.sidemung.Model.Pengaduan;
 import com.rippleInv.sidemung.R;
+import com.rippleInv.sidemung.views.Pengaduan.PengaduanActivity;
+import com.rippleInv.sidemung.views.main.MainActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.PicassoProvider;
 
@@ -27,6 +35,7 @@ public class StatusBelumDiProsesAdapter extends RecyclerView.Adapter<StatusBelum
     List<Pengaduan> listPengaduan;
     Pengaduan pengaduan;
     LinearLayout linearLayout;
+    View view;
 
     public StatusBelumDiProsesAdapter(List<Pengaduan> listPengaduan) {
         this.listPengaduan = listPengaduan;
@@ -85,4 +94,5 @@ public class StatusBelumDiProsesAdapter extends RecyclerView.Adapter<StatusBelum
 
         }
     }
+
 }

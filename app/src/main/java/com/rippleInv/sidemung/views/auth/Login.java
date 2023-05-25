@@ -91,17 +91,7 @@ public class Login extends AppCompatActivity {
                     preferences.saveString("email",loginResponse.getData().getUser().getEmail());
                     preferences.saveString("name",loginResponse.getData().getUser().getName());
                     preferences.saveString("phone",loginResponse.getData().getUser().getPhone());
-//                    preferences.saveString("nama", loginRequest.getNama());
-//                    Prodi prodi = loginRequest.getProdi();
-//                    if (prodi != null) {
-//                        preferences.saveInt("prodi", prodi.getId());
-//                    }
                     System.out.println(preferences.getString("token",""));
-//                    preferences.saveString("no_hp", loginRequest.getNoHp());
-//                    preferences.saveString("token", loginResponse.getToken());
-
-//                    ApiClient.setAuthToken(loginResponse.getToken());
-
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -123,44 +113,4 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-//        RequestQueue requestQueue = Volley.newRequestQueue(this);
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, LinkApi.Login, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//                Log.e("Rest response",response);
-//                System.out.println(response);
-//                phone.setText("");
-//                password.setText("");
-////                Toast.makeText(getApplicationContext(), "Registrasi Berhasil", Toast.LENGTH_LONG).show();
-//                Intent intent = new Intent(R.this, Login.class);
-//                startActivity(intent);
-////                finish();
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Log.e("Rest response",error.toString());
-//            }
-//        }){
-////            @Override
-////            protected Map<String,String> getParams(){
-////                Map<String,String> params = new HashMap<String,String>();
-////                params.put("nik", inputNik);
-////                params.put("name", inputName);
-////                params.put("email", inputEmail);
-////                params.put("phone", inputPhone);
-////                params.put("password", inputPassword);
-////                return params;
-////            }
-////
-////            @Override
-////            public Map<String,String> getHeaders() throws AuthFailureError {
-////                Map<String,String> params = new HashMap<String,String>();
-////                params.put("Content-Type", "application/x-www-form-urlencoded");
-////                return params;
-////            }
-//
-//        };
-//
-//        requestQueue.add(stringRequest);
 }
