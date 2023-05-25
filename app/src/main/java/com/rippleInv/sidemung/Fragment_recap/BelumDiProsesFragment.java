@@ -11,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.google.gson.JsonObject;
 import com.rippleInv.sidemung.Adapters.PengaduanAdapter;
 import com.rippleInv.sidemung.Adapters.StatusBelumDiProsesAdapter;
 import com.rippleInv.sidemung.Model.ApiClient;
@@ -64,8 +66,12 @@ public class BelumDiProsesFragment extends Fragment {
                     StatusBelumDiProsesAdapter statusBelumDiProsesAdapter = new StatusBelumDiProsesAdapter(response.body());
                     recyclerView.setAdapter(statusBelumDiProsesAdapter);
                     progressBar.setVisibility(View.GONE);
+                    if (response.body() == null || response.body().equals("")){
+                        Toast.makeText(view.getContext(), "Data Pengaduan Kosong", Toast.LENGTH_SHORT).show();
+                    }
                 }else{
                     progressBar.setVisibility(View.VISIBLE);
+//                    Toast.makeText(view.getContext(), "Data Pengaduan Kosong", Toast.LENGTH_SHORT).show();
                 }
             }
 

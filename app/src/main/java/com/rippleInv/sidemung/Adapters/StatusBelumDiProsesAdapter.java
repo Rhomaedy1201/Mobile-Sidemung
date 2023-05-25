@@ -1,6 +1,7 @@
 package com.rippleInv.sidemung.Adapters;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
@@ -35,7 +36,8 @@ public class StatusBelumDiProsesAdapter extends RecyclerView.Adapter<StatusBelum
     List<Pengaduan> listPengaduan;
     Pengaduan pengaduan;
     LinearLayout linearLayout;
-    View view;
+    View viewDialog;
+    private Context mcon;
 
     public StatusBelumDiProsesAdapter(List<Pengaduan> listPengaduan) {
         this.listPengaduan = listPengaduan;
@@ -55,6 +57,7 @@ public class StatusBelumDiProsesAdapter extends RecyclerView.Adapter<StatusBelum
         holder.judulPengaduan.setText(pengaduan.getJudul());
         holder.status.setText(pengaduan.getDescription());
         Picasso.get().load("http://192.168.1.6:8000/data_file/"+pengaduan.getImage()).into(holder.gambar);
+
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,7 +70,7 @@ public class StatusBelumDiProsesAdapter extends RecyclerView.Adapter<StatusBelum
 
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                        Toast.makeText(view.getContext(), "Data Pengaduan Kosong", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -93,6 +96,42 @@ public class StatusBelumDiProsesAdapter extends RecyclerView.Adapter<StatusBelum
             gambar = itemView.findViewById(R.id.gambarBelumDiProses);
 
         }
+    }
+
+    private void showDialog(){
+        ConstraintLayout constraintLayout = viewDialog.findViewById(R.id.dialogPengaduanConstrantLayout);
+        View view1 = LayoutInflater.from(viewDialog.getContext()).inflate(R.layout.delete_dialog, constraintLayout);
+        Button btnDelete = view1.findViewById(R.id.hapus_pengaduan);
+        Button btnBatal = view1.findViewById(R.id.batal_delete_pengaduan);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(viewDialog.getContext());
+        builder.setView(view1);
+        final AlertDialog alertDialog = builder.create();
+
+        btnDelete.findViewById(R.id.hapus_pengaduan).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                Toast.makeText(viewDialog.getContext(), "Delete", Toast.LENGTH_SHORT).show();
+                mcon.startActivity(new Intent(mcon, MainActivity.class));
+
+            }
+        });
+        btnBatal.findViewById(R.id.batal_delete_pengaduan).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                Toast.makeText(viewDialog.getContext(), "Batal", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(viewDialog.getContext(),MainActivity.class));
+//                finish();
+            }
+        });
+
+
+        if (alertDialog.getWindow() != null){
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        alertDialog.show();
     }
 
 }

@@ -1,14 +1,20 @@
 package com.rippleInv.sidemung.views.profile;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rippleInv.sidemung.Model.ApiClient;
 import com.rippleInv.sidemung.Model.MyPreferences;
@@ -25,7 +31,7 @@ public class ProfileFragment extends Fragment {
 
     View view;
     TextView toEdit_profile,email,nik,name;
-    TextView logout;
+    LinearLayout logout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,11 +62,8 @@ public class ProfileFragment extends Fragment {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()){
-                            MyPreferences preferences = new MyPreferences(getActivity());
-                            preferences.clear();
                             System.out.println(response.raw());
-                            Intent intent = new Intent(getActivity(), Login.class);
-                            startActivity(intent);
+                            showDialog();
                         }
                     }
 
@@ -72,6 +75,39 @@ public class ProfileFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private void showDialog(){
+        ConstraintLayout constraintLayout = view.findViewById(R.id.dialogConfirmLogout);
+        View view1 = LayoutInflater.from(getActivity()).inflate(R.layout.confirm_logout_dialog, constraintLayout);
+        Button btn_batalKeluar = view1.findViewById(R.id.batal_keluar);
+        Button btn_logout = view1.findViewById(R.id.keluar_logout);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setView(view1);
+        final AlertDialog alertDialog = builder.create();
+
+        btn_logout.findViewById(R.id.keluar_logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                Toast.makeText(getActivity(), "Logout Berhasil", Toast.LENGTH_LONG).show();
+                MyPreferences preferences = new MyPreferences(getActivity());
+                preferences.clear();
+                Intent intent = new Intent(getActivity(), Login.class);
+                startActivity(intent);
+            }
+        });
+        btn_batalKeluar.findViewById(R.id.batal_keluar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+        if (alertDialog.getWindow() != null){
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        alertDialog.show();
     }
 
 }

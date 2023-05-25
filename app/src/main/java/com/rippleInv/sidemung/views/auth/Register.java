@@ -2,10 +2,14 @@ package com.rippleInv.sidemung.views.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -21,6 +25,8 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 import com.rippleInv.sidemung.R;
 import com.rippleInv.sidemung.RestApi.LinkApi;
+import com.rippleInv.sidemung.views.Pengaduan.PengaduanActivity;
+import com.rippleInv.sidemung.views.main.MainActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,12 +61,28 @@ public class Register extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                postUser();
-//                if (password.getText() == null || password.getText().equals("")){
-//                    System.out.println("Masih kosong");
-//                }else{
-//                    Toast.makeText(getApplicationContext(), "tidak kosong", Toast.LENGTH_SHORT).show();
-//                }
+//                postUser();
+                if (email.getText().toString().trim().length() < 1){
+                    Toast.makeText(Register.this, "Email Masih Kosong", Toast.LENGTH_SHORT).show();
+                } else if (name.getText().toString().trim().length() < 1) {
+                    Toast.makeText(Register.this, "Nama Masih Kosong", Toast.LENGTH_SHORT).show();
+                }else if (phone.getText().toString().trim().length() < 1) {
+                    Toast.makeText(Register.this, "No Hanphone Masih Kosong", Toast.LENGTH_SHORT).show();
+                }else if (nik.getText().toString().trim().length() < 1) {
+                    Toast.makeText(Register.this, "Nik Masih Kosong", Toast.LENGTH_SHORT).show();
+                }else if (password.getText().toString().trim().length() < 7) {
+                    Toast.makeText(Register.this, "Password Masih Kosong atau harus lebih 7 karakter", Toast.LENGTH_SHORT).show();
+                }else if (passwordConfirm.getText().toString().trim().length() < 7) {
+                    Toast.makeText(Register.this, "Konfirmasi password Masih Kosong atau dan harus lebih 7 karakter", Toast.LENGTH_SHORT).show();
+                }else {
+                    if (passwordConfirm.getText().toString().trim().equalsIgnoreCase(password.getText().toString().trim())) {
+                        postUser();
+                        showDialog();
+                    }else {
+                        Toast.makeText(Register.this, "Konfirmasi Password harus sama", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
             }
         });
     }
@@ -82,10 +104,7 @@ public class Register extends AppCompatActivity {
                 email.setText("");
                 phone.setText("");
                 password.setText("");
-                Toast.makeText(getApplicationContext(), "Registrasi Berhasil", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(Register.this, Login.class);
-                startActivity(intent);
-                finish();
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -114,5 +133,30 @@ public class Register extends AppCompatActivity {
         };
 
         requestQueue.add(stringRequest);
+    }
+
+    private void showDialog(){
+        ConstraintLayout constraintLayout = findViewById(R.id.successConstrantLayout);
+        View view1 = LayoutInflater.from(Register.this).inflate(R.layout.success_dialog, constraintLayout);
+        Button successDone = view1.findViewById(R.id.successDone);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Register.this);
+        builder.setView(view1);
+        final AlertDialog alertDialog = builder.create();
+
+        successDone.findViewById(R.id.successDone).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                Toast.makeText(getApplicationContext(), "Registrasi Berhasil", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Register.this, Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        if (alertDialog.getWindow() != null){
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        alertDialog.show();
     }
 }

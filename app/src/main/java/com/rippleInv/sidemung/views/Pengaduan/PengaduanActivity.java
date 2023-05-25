@@ -75,6 +75,7 @@ public class PengaduanActivity extends AppCompatActivity {
     private ImageView gambar_pengaduan;
     private TextInputEditText alamat,name,phone,judul,description;
     private Bitmap selectedImage;
+    Uri selectedImageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +106,20 @@ public class PengaduanActivity extends AppCompatActivity {
         btn_pengaduan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                postPengaduan();
+                if (alamat.getText().toString().trim().length() < 1){
+                    Toast.makeText(PengaduanActivity.this, "Pengaduan Masih Kosong", Toast.LENGTH_SHORT).show();
+                } else if (judul.getText().toString().trim().length() < 1) {
+                    Toast.makeText(PengaduanActivity.this, "Judul Masih Kosong", Toast.LENGTH_SHORT).show();
+                }else if (description.getText().toString().trim().length() < 1) {
+                    Toast.makeText(PengaduanActivity.this, "Detail Pengaduan Masih Kosong", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (selectedImageUri != null && !selectedImageUri.equals(Uri.EMPTY)) {
+                        postPengaduan();
+                    } else {
+                        Toast.makeText(PengaduanActivity.this, "Gambar Masih Kosong", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
             }
         });
 
@@ -129,7 +143,7 @@ public class PengaduanActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 //        }
         if (requestCode == 101 && resultCode == RESULT_OK && data != null) {
-            Uri selectedImageUri = data.getData();
+            selectedImageUri = data.getData();
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImageUri);
                 gambar_pengaduan.setImageBitmap(bitmap);
