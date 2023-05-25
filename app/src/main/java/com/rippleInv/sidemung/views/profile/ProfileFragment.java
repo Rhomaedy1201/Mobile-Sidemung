@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +32,8 @@ public class ProfileFragment extends Fragment {
 
     View view;
     TextView toEdit_profile,email,nik,name;
-    LinearLayout logout;
+    ImageView logout;
+    LinearLayout btn_logout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,35 +45,24 @@ public class ProfileFragment extends Fragment {
         email = view.findViewById(R.id.email);
         nik = view.findViewById(R.id.nik);
         name = view.findViewById(R.id.name);
+        btn_logout = view.findViewById(R.id.ll_logout);
 
         email.setText(preferences.getString("email",""));
         nik.setText(preferences.getString("nik",""));
         name.setText(preferences.getString("name",""));
+
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
+
         toEdit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), EditprofileActivity.class);
                 startActivity(intent);
-            }
-        });
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Call<ResponseBody> logout = ApiClient.getUserService(getActivity()).logout();
-                logout.enqueue(new Callback<ResponseBody>() {
-                    @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        if (response.isSuccessful()){
-                            System.out.println(response.raw());
-                            showDialog();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-                    }
-                });
             }
         });
         return view;
@@ -87,15 +78,31 @@ public class ProfileFragment extends Fragment {
         builder.setView(view1);
         final AlertDialog alertDialog = builder.create();
 
+        Call<ResponseBody> logout = ApiClient.getUserService(getActivity()).logout();
+
         btn_logout.findViewById(R.id.keluar_logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                alertDialog.dismiss();
-                Toast.makeText(getActivity(), "Logout Berhasil", Toast.LENGTH_LONG).show();
-                MyPreferences preferences = new MyPreferences(getActivity());
-                preferences.clear();
-                Intent intent = new Intent(getActivity(), Login.class);
-                startActivity(intent);
+                logout.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()){
+                            System.out.println(response.raw());
+                            alertDialog.dismiss();
+                            Toast.makeText(getActivity(), "Logout Berhasil", Toast.LENGTH_LONG).show();
+                            MyPreferences preferences = new MyPreferences(getActivity());
+                            preferences.clear();
+                            Intent intent = new Intent(getActivity(), Login.class);
+                            startActivity(intent);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                    }
+                });
+
             }
         });
         btn_batalKeluar.findViewById(R.id.batal_keluar).setOnClickListener(new View.OnClickListener() {
