@@ -21,4 +21,5 @@ public class PageRouter {
         Intent intent = new Intent(fragment.requireContext(), destinationActivity);
         fragment.startActivity(intent);
     }
+    // Cek
 }
